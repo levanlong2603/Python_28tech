@@ -48,16 +48,17 @@ def dijkstra(s):
     for i in range(n):
         if to_char(i) != s:
             t = to_char(i)
-            print(f"{s} -> {t}: {d[i]}")
             current = i
             path = []
+            print(f"Tu {s} -> {t}: ", end="")
             while True:
                 path.append(current)
                 if current == to_index(s):
                     break
                 current = pre[current]
             path.reverse()
-            print(" ".join(to_char(x) for x in path))
+            print(" - ".join(to_char(node) for node in path), end="")
+            print(f", cost({t}) = {d[i]}")
 
 if __name__ == "__main__":
     nhap()
